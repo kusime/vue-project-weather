@@ -1,3 +1,55 @@
 @tailwind utilities;
 @tailwind components;
 @tailwind base;
+
+/*animate transition*/
+.animate-enter-from {
+    @apply opacity-0 scale-0 -translate-y-96;
+}
+
+.animate-enter-active {
+    @apply duration-500 transition-all scale-150 -translate-y-24;
+}
+
+.animate-enter-to {
+    @apply opacity-100 scale-100 translate-y-0;
+}
+
+.animate-leave-from {
+    @apply opacity-100 scale-100  translate-y-0;
+}
+
+.animate-leave-active {
+    @apply duration-300 transition-all scale-50 translate-y-24;
+}
+
+.animate-leave-to {
+    @apply opacity-0 scale-0  translate-y-96;
+}
+
+/*fade transition*/
+
+
+.fade-enter-from {
+    @apply opacity-0 ;
+}
+
+.fade-enter-active {
+    @apply duration-200 transition-all ;
+}
+
+.fade-enter-to {
+    @apply opacity-100 ;
+}
+
+.fade-leave-from {
+    @apply opacity-100 ;
+}
+
+.fade-leave-active {
+    @apply duration-200 transition-all ;
+}
+
+.fade-leave-to {
+    @apply opacity-0 ;
+}
