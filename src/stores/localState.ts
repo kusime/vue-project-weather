@@ -22,12 +22,21 @@ const localState = defineStore("localState", () => {
     localStorage.setItem(key, JSON.stringify(localCityStore.value));
   }
 
+  // https://dotnetpattern.com/typescript-optional-parameters
+
+  function checkAlreadyExists(
+    lat: number | string,
+    lon: number | string
+  ): true | false {
+    return localCityStore.value.some((unit) => {
+      return lat === unit.lat && lon === unit.lon;
+    });
+  }
+
   function addUnit(unitToBeAdd: StoreUnit): "already" | "success" {
-    if (
-      localCityStore.value.some((unit) => {
-        return unitToBeAdd.lat === unit.lat && unitToBeAdd.lon === unit.lon;
-      })
-    ) {
+    console.log("unitToBeAdd >>", unitToBeAdd);
+
+    if (checkAlreadyExists(unitToBeAdd.lat, unitToBeAdd.lon)) {
       return "already";
     }
 
@@ -45,6 +54,6 @@ const localState = defineStore("localState", () => {
     _setState();
   }
 
-  return { addUnit, removeUnit, getState, localCityStore };
+  return { addUnit, removeUnit, getState, checkAlreadyExists, localCityStore };
 });
 export default localState;

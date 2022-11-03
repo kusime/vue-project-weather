@@ -42,7 +42,7 @@
         </li>
         <li>
           3. Track the city by clicking on the "+" in the top right this will
-          save the city to vviw at the later time on the home age
+          save the city to view at the later time on the home age
         </li>
         <li></li>
       </ul>

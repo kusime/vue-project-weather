@@ -5,7 +5,7 @@
         v-if="modalActive"
         class="z-50 rounded-2xl w-full fixed bg-black bg-opacity-30 h-screen left-0 top-0 px-8 flex justify-center items-center"
       >
-        <!--    // modal contant-->
+        <!--    // modal content-->
         <div
           class="p-4 bg-white self-start max-w-screen-md flex flex-col rounded-2xl self-center"
         >

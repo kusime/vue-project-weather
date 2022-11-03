@@ -77,8 +77,8 @@ const apiState = defineStore("apiState", {
     },
 
     async goWeatherSearch(
-      lat: LocationQueryValue | LocationQueryValue[],
-      lon: LocationQueryValue | LocationQueryValue[],
+      lat: LocationQueryValue | LocationQueryValue[] | string | number,
+      lon: LocationQueryValue | LocationQueryValue[] | string | number,
       types: "weather" | "forecast"
     ) {
       try {

@@ -6,11 +6,17 @@
     <!--    preview indicator-->
     <teleport to="body">
       <div
-        v-if="preview"
+        v-if="preview === 'true'"
         class="z-30 opacity-80 fixed bottom-0 left-0 right-0 w-full self-center flex justify-center text-white bg-weather-secondary py-5"
       >
         You are currently previewing this city , click the "+" icon to tracking
         this city.
+      </div>
+      <div
+        v-else
+        class="z-30 opacity-80 fixed bottom-0 left-0 right-0 w-full self-center flex justify-center text-white bg-weather-secondary py-5"
+      >
+        You have subscribed this city ! :D
       </div>
     </teleport>
 
@@ -35,7 +41,7 @@
             <div class="flex flex-row justify-between items-center">
               <p class="text-[5rem]">°C</p>
               <img
-                :src="`http://openweathermap.org/img/wn/${currentWeather.weather[0]['icon']}@2x.png`"
+                :src="`https://openweathermap.org/img/wn/${currentWeather.weather[0]['icon']}@2x.png`"
                 alt="Weather"
               />
             </div>

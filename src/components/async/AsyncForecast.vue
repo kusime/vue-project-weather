@@ -14,11 +14,13 @@
           <p class="whitespace-nowrap text-2xl text-white">
             {{ api.retrieveCurrentUTCTime(step["dt"]) }}
           </p>
-          <img
-            :src="`https://openweathermap.org/img/wn/${step.weather[0]['icon']}@2x.png`"
-            alt="Weather"
-            class="w-[88.45px] h-[88.45px]"
-          />
+          <div class="w-[100px] h-[100px] overflow-hidden">
+            <img
+              :src="`https://openweathermap.org/img/wn/${step.weather[0]['icon']}@2x.png`"
+              alt="Weather"
+              class=""
+            />
+          </div>
           <p class="whitespace-nowrap text-2xl text-white">
             {{ `${step.main["temp"]} °C` }}
           </p>
